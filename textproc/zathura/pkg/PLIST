@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/zathura
-@man man/man1/zathura.1
