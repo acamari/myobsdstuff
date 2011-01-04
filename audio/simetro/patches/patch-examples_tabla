@@ -1,0 +1,18 @@
+$OpenBSD$
+--- examples/tabla.orig	Sat Aug  1 01:37:12 2009
++++ examples/tabla	Sat Aug  1 01:34:21 2009
+@@ -1,11 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ # Here we use periods between eighth notes and spaces between quarter 
+ # notes.  The accents string needs to be quoted so the shell passed it 
+ # as a single argument to simetro.
+ # We are programming the rhythm at the 32nd note level, so there are 
+ # 8 ticks per beat, so the BPM is (1000/8), 125 BPM.
+ 
+-../simetro 1000 "9060.4020 9000.0044 9000.6000 4232.5252"  | \
+-	ecasound -f:s16,2,44100,i -i:stdin
+-
++simetro 1000 "9060.4020 9000.0044 9000.6000 4232.5252"  | \
++	aucat -i-
+ 

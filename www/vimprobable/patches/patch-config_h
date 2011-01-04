@@ -1,0 +1,11 @@
+$OpenBSD$
+--- config.h.orig	Fri Dec 25 13:38:59 2009
++++ config.h	Tue Jan 12 16:54:06 2010
+@@ -82,6 +82,7 @@ static const int searchoptions          = CaseInsensit
+ /* search engines */
+ static Searchengine searchengines[] = {
+     { "i",          "http://ixquick.com/do/metasearch.pl?query=%s" },
++    { "g",          "http://www.google.com/search?query=%s" },
+     { "s",          "https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw=%s" },
+     { "w",          "https://secure.wikimedia.org/wikipedia/en/w/index.php?title=Special%%3ASearch&search=%s&go=Go" },
+     { "wd",         "https://secure.wikimedia.org/wikipedia/de/w/index.php?title=Special%%3ASearch&search=%s&go=Go" },

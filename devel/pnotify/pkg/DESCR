@@ -1,0 +1,4 @@
+pnotify is an event notification framework for monitoring files and
+directories. It is designed to be portable across different Unix-like
+operating systems, and currently supports Linux and BSD. The pnotify
+API is very similar to the inotify API under Linux.

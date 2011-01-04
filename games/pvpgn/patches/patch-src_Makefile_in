@@ -1,0 +1,81 @@
+$OpenBSD$
+--- src/Makefile.in.orig	Wed Feb 25 16:48:47 2009
++++ src/Makefile.in	Mon Jul 20 00:59:13 2009
+@@ -24,22 +24,26 @@ bindir		= @bindir@
+ sbindir		= @sbindir@
+ mandir		= @mandir@
+ confdir		= @sysconfdir@
+-sharedir	= @localstatedir@
+-filesdir	= @localstatedir@/files
+-usersdir	= @localstatedir@/users
+-userscdbdir	= @localstatedir@/userscdb
+-clandir		= @localstatedir@/clans
+-teamdir		= @localstatedir@/teams
+-bnmaildir	= @localstatedir@/bnmail
+-reportsdir	= @localstatedir@/reports
+-chanlogsdir	= @localstatedir@/chanlogs
+-charinfodir     = @localstatedir@/charinfo
+-charsavedir     = @localstatedir@/charsave
+-ladderdir       = @localstatedir@/ladders
+-statusdir       = @localstatedir@/status
+-bak_charsavedir = @localstatedir@/bak/charsave
+-bak_charinfodir = @localstatedir@/bak/charinfo
+ 
++realconfdir  = /etc/bnetd
++
++localstatedir = @localstatedir@
++sharedir	= @datadir@
++filesdir	= ${sharedir}/files
++usersdir	= ${sharedir}/users
++userscdbdir	= ${sharedir}/userscdb
++clandir		= ${sharedir}/clans
++teamdir		= ${sharedir}/teams
++bnmaildir	= ${sharedir}/bnmail
++reportsdir	= ${sharedir}/reports
++chanlogsdir	= ${sharedir}/chanlogs
++charinfodir     = ${sharedir}/charinfo
++charsavedir     = ${sharedir}/charsave
++ladderdir       = ${sharedir}/ladders
++statusdir       = ${sharedir}/status
++bak_charsavedir = ${sharedir}/bak/charsave
++bak_charinfodir = ${sharedir}/bak/charinfo
++
+ SRC_SRCDIR	= @srcdir@
+ SRC_BINDIR	= @srcdir@/../bin
+ SRC_SBINDIR	= @srcdir@/../sbin
+@@ -75,8 +79,9 @@ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
+ INSTALL_SCRIPT	= @INSTALL_SCRIPT@
+-INSTALL_DIRS	= @INSTALL@ -d -m 755
++INSTALL_DIRS	= install -d -m 755
+ 
++
+ # CC set by configure
+ # CFLAGS set by configure
+ CPPFLAGS	= @DEFS@ @DEFINES@ -DBNETD_DEFAULT_CONF_FILE=\"${confdir}/bnetd.conf\" -DD2CS_DEFAULT_CONF_FILE=\"${confdir}/d2cs.conf\" -DD2DBS_DEFAULT_CONF_FILE=\"${confdir}/d2dbs.conf\" -I"${SRC_SRCDIR}" @CPPFLAGS@
+@@ -747,17 +752,21 @@ uninstall-share:
+ 	  ${RMF} ${sharedir}/$$p; \
+ 	done
+ 
++_sed_comms=-e "s@!!VAR!!@${localstatedir}/@g" \
++           -e "s@!!ETC!!@${realconfdir}/@g"  \
++           -e "s@!!SHARE!!@${sharedir}/@g"  
++
+ ${SRC_CONFDIR}/bnetd.conf: ${SRC_CONFDIR}/bnetd.conf.in ${SRC_SRCDIR}/config.status
+ 	@${RMF} $@
+-	${SED} -e "s@/usr/local/var/@${sharedir}/@g" -e "s@/usr/local/etc/@${confdir}/@g" ${SRC_CONFDIR}/bnetd.conf.in > $@
++	${SED} ${_sed_comms} ${SRC_CONFDIR}/bnetd.conf.in > $@
+ 
+ ${SRC_CONFDIR}/d2cs.conf: ${SRC_CONFDIR}/d2cs.conf.in ${SRC_SRCDIR}/config.status
+ 	@${RMF} $@
+-	${SED} -e "s@/usr/local/var/@${sharedir}/@g" -e "s@/usr/local/etc/@${confdir}/@g" ${SRC_CONFDIR}/d2cs.conf.in > $@
++	${SED} ${_sed_comms} ${SRC_CONFDIR}/d2cs.conf.in > $@
+ 
+ ${SRC_CONFDIR}/d2dbs.conf: ${SRC_CONFDIR}/d2dbs.conf.in ${SRC_SRCDIR}/config.status
+ 	@${RMF} $@
+-	${SED} -e "s@/usr/local/var/@${sharedir}/@g" -e "s@/usr/local/etc/@${confdir}/@g" ${SRC_CONFDIR}/d2dbs.conf.in > $@
++	${SED} ${_sed_comms} ${SRC_CONFDIR}/d2dbs.conf.in > $@
+ 
+ ${SRC_ACDIR}/ansi2knr: ${SRC_ACDIR}/ansi2knr.o
+ 	@${RMF} $@

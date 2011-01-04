@@ -1,0 +1,15 @@
+The DBIx::Chart extends SQL syntax to provide directives for
+generating chart images. By subclassing DBI, it makes every SQL
+capable data source with a DBI driver appear to natively support
+charting/graphing.
+
+DBIx::Chart builds on the SQL syntax introduced in DBD::Chart to
+render pie charts, bar charts, box&whisker charts (aka boxcharts),
+histograms, Gantt charts, and line, point, and area graphs.
+
+For detailed usage information, see the included dbixchart.html
+webpage. 
+
+Also refer to DBD::Chart homepage at www.presicient.com/dbdchart.
+
+See DBI(3) for details on DBI.

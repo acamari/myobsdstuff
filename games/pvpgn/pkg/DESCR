@@ -1,0 +1,6 @@
+PvPGN (Player vs Player Gaming Network) is a bnetd based gaming
+network server emulation project. It currently supports all Battle.net
+games (such as StarCraft, Diablo II, and Warcraft III), and most
+Westwood Online clients (Tiberian Sun, Red Alert 2, Yuri's Revenge).
+It gives you the power to run your own server, manage your own
+users, run your own tournaments, etc.

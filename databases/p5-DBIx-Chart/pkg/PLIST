@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/Chart.pm
+@man man/man3p/DBIx::Chart.3p

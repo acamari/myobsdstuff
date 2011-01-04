@@ -1,0 +1,170 @@
+@comment $OpenBSD$
+@newgroup _bnetd:648
+@newuser _bnetd:648:648:daemon:bnetd based gaming network server:/var/empty:/sbin/nologin
+@bin bin/bnbot
+@bin bin/bncdb
+@bin bin/bnchat
+@bin bin/bnftp
+@bin bin/bni2tga
+@bin bin/bnibuild
+@bin bin/bniextract
+@bin bin/bnilist
+@bin bin/bnpass
+@bin bin/bnstat
+@bin bin/tgainfo
+@man man/man1/bnbot.1
+@man man/man1/bnchat.1
+@man man/man1/bnetd.1
+@man man/man1/bnftp.1
+@man man/man1/bni2tga.1
+@man man/man1/bnibuild.1
+@man man/man1/bniextract.1
+@man man/man1/bnilist.1
+@man man/man1/bnpass.1
+@man man/man1/bnstat.1
+@man man/man1/bntrackd.1
+@man man/man1/tgainfo.1
+@man man/man5/bnetd.conf.5
+@man man/man5/bntext.5
+@bin sbin/bnetd
+@bin sbin/bntrackd
+@bin sbin/d2cs
+@bin sbin/d2dbs
+share/bnetd/
+share/bnetd/bak/
+share/bnetd/bak/charinfo/
+share/bnetd/bak/charsave/
+share/bnetd/bnmail/
+share/bnetd/chanlogs/
+share/bnetd/charinfo/
+share/bnetd/charsave/
+share/bnetd/clans/
+share/bnetd/files/
+share/bnetd/files/IX86ver1.mpq
+share/bnetd/files/PMACver1.mpq
+share/bnetd/files/XMACver1.mpq
+share/bnetd/files/ad000001.mng
+share/bnetd/files/ad000001.smk
+share/bnetd/files/ad000004.mng
+share/bnetd/files/bnserver-D2DV.ini
+share/bnetd/files/bnserver-D2XP.ini
+share/bnetd/files/bnserver-WAR3.ini
+share/bnetd/files/bnserver.ini
+share/bnetd/files/chathelp-war3-default.txt
+share/bnetd/files/chathelp-war3-enUS.txt
+share/bnetd/files/chathelp-war3-frFR.txt
+share/bnetd/files/chathelp-war3-ruRU.txt
+share/bnetd/files/chathelp-war3-zhCN.txt
+share/bnetd/files/icons-WAR3.bni
+share/bnetd/files/icons.bni
+share/bnetd/files/icons_STAR.bni
+share/bnetd/files/newaccount-default.txt
+share/bnetd/files/newaccount-enUS.txt
+share/bnetd/files/newbie.save
+share/bnetd/files/termsofservice-default.txt
+share/bnetd/files/termsofservice-enUS.txt
+share/bnetd/files/tos-unicode_BRA.txt
+share/bnetd/files/tos-unicode_CHI.txt
+share/bnetd/files/tos-unicode_DEU.txt
+share/bnetd/files/tos-unicode_ENU.txt
+share/bnetd/files/tos-unicode_ESP.txt
+share/bnetd/files/tos-unicode_FRA.txt
+share/bnetd/files/tos-unicode_HAN.txt
+share/bnetd/files/tos-unicode_ITA.txt
+share/bnetd/files/tos-unicode_JPN.txt
+share/bnetd/files/tos-unicode_KOR.txt
+share/bnetd/files/tos-unicode_POL.txt
+share/bnetd/files/tos-unicode_POR.txt
+share/bnetd/files/tos-unicode_RUS.txt
+share/bnetd/files/tos-unicode_SIN.txt
+share/bnetd/files/tos-unicode_USA.txt
+share/bnetd/files/tos.txt
+share/bnetd/files/tos_BRA.txt
+share/bnetd/files/tos_CHI.txt
+share/bnetd/files/tos_DEU.txt
+share/bnetd/files/tos_ENU.txt
+share/bnetd/files/tos_ESP.txt
+share/bnetd/files/tos_FRA.txt
+share/bnetd/files/tos_HAN.txt
+share/bnetd/files/tos_ITA.txt
+share/bnetd/files/tos_JPN.txt
+share/bnetd/files/tos_KOR.txt
+share/bnetd/files/tos_POL.txt
+share/bnetd/files/tos_POR.txt
+share/bnetd/files/tos_RUS.txt
+share/bnetd/files/tos_SIN.txt
+share/bnetd/files/tos_USA.txt
+share/bnetd/files/ver-ix86-1.mpq
+share/bnetd/ladders/
+share/bnetd/reports/
+share/bnetd/status/
+share/bnetd/teams/
+share/bnetd/users/
+share/bnetd/userscdb/
+share/examples/bnetd/
+@sample /etc/bnetd/
+share/examples/bnetd/ad.conf
+@sample /etc/bnetd/ad.conf
+share/examples/bnetd/address_translation.conf
+@sample /etc/bnetd/address_translation.conf
+share/examples/bnetd/anongame_infos.conf
+@sample /etc/bnetd/anongame_infos.conf
+share/examples/bnetd/autoupdate.conf
+@sample /etc/bnetd/autoupdate.conf
+share/examples/bnetd/bnalias.conf
+@sample /etc/bnetd/bnalias.conf
+share/examples/bnetd/bnban.conf
+@sample /etc/bnetd/bnban.conf
+share/examples/bnetd/bnetd.conf
+@sample /etc/bnetd/bnetd.conf
+share/examples/bnetd/bnetd_default_user.cdb
+@sample /etc/bnetd/bnetd_default_user.cdb
+share/examples/bnetd/bnetd_default_user.plain
+@sample /etc/bnetd/bnetd_default_user.plain
+share/examples/bnetd/bnhelp.conf
+@sample /etc/bnetd/bnhelp.conf
+share/examples/bnetd/bnissue.txt
+@sample /etc/bnetd/bnissue.txt
+share/examples/bnetd/bnmaps.conf
+@sample /etc/bnetd/bnmaps.conf
+share/examples/bnetd/bnmotd.txt
+@sample /etc/bnetd/bnmotd.txt
+share/examples/bnetd/bnxpcalc.conf
+@sample /etc/bnetd/bnxpcalc.conf
+share/examples/bnetd/bnxplevel.conf
+@sample /etc/bnetd/bnxplevel.conf
+share/examples/bnetd/channel.conf
+@sample /etc/bnetd/channel.conf
+share/examples/bnetd/command_groups.conf
+@sample /etc/bnetd/command_groups.conf
+share/examples/bnetd/d2cs.conf
+@sample /etc/bnetd/d2cs.conf
+share/examples/bnetd/d2dbs.conf
+@sample /etc/bnetd/d2dbs.conf
+share/examples/bnetd/d2server.ini
+@sample /etc/bnetd/d2server.ini
+share/examples/bnetd/news.txt
+@sample /etc/bnetd/news.txt
+share/examples/bnetd/realm.conf
+@sample /etc/bnetd/realm.conf
+share/examples/bnetd/sql_DB_layout.conf
+@sample /etc/bnetd/sql_DB_layout.conf
+share/examples/bnetd/sql_DB_layout2.conf
+@sample /etc/bnetd/sql_DB_layout2.conf
+share/examples/bnetd/supportfile.conf
+@sample /etc/bnetd/supportfile.conf
+share/examples/bnetd/topics.conf
+@sample /etc/bnetd/topics.conf
+share/examples/bnetd/tournament.conf
+@sample /etc/bnetd/tournament.conf
+share/examples/bnetd/versioncheck.conf
+@sample /etc/bnetd/versioncheck.conf
+@mode 0755
+@owner _bnetd
+@group _bnetd
+@sample /var/bnetd/
+@sample /var/bnetd/ladders/
+@sample /var/bnetd/status/
+@sample /var/bnetd/users/
+@sample /var/bnetd/clans/
+@sample /var/bnetd/teams/

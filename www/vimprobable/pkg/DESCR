@@ -1,0 +1,6 @@
+Vimprobable is a WWW browser that behaves like the Vimperator plugin
+available for Mozilla Firefox. It is based on the WebKit engine
+(using GTK bindings). It is a fork of the currently abandoned
+vimpression.
+
+This is vimprobable2 an alpha version.

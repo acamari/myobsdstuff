@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+include/pnotify.h
+lib/libpnotify.a
+@man man/man3/pnotify.3

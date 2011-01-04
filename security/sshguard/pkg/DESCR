@@ -1,0 +1,3 @@
+uses logfile monitoring and protects networked hosts from ssh brute
+force attacks. It detects such attacks and blocks the author's address 
+with a firewall rule.

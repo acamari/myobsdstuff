@@ -1,0 +1,10 @@
+$OpenBSD$
+--- examples/groove.orig	Sat Aug  1 01:37:12 2009
++++ examples/groove	Sat Aug  1 01:32:55 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-../simetro 200 83,05,96,53  | ecasound -f:s16,2,44100,i -i:stdin
++simetro 200 83,05,96,53  | aucat -i-
+ 

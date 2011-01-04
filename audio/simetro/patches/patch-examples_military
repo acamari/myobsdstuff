@@ -1,0 +1,10 @@
+$OpenBSD$
+--- examples/military.orig	Sat Aug  1 01:37:12 2009
++++ examples/military	Sat Aug  1 01:33:14 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-../simetro 600 8642-9000-9060-9000  | ecasound -f:s16,2,44100,i -i:stdin
++simetro 600 8642-9000-9060-9000  | aucat -i-
+ 

@@ -1,0 +1,26 @@
+$OpenBSD$
+--- conf/d2dbs.conf.in.orig	Mon Apr 13 04:30:32 2009
++++ conf/d2dbs.conf.in	Mon Apr 13 04:33:42 2009
+@@ -54,14 +54,14 @@ loglevels = fatal,error,warn,info,debug,trace
+ # File and Path section								#
+ # Use absolute paths in these lines to avoid problems!				#
+ #-------------------------------------------------------------------------------#
+-logfile		=	/usr/local/var/d2dbs.log
+-logfile-gs	=	/usr/local/var/d2dbs-gs.log
+-charsavedir	=	/usr/local/var/charsave
+-charinfodir	=	/usr/local/var/charinfo
+-ladderdir	=	/usr/local/var/ladders
+-bak_charsavedir	=	/usr/local/var/bak/charsave
+-bak_charinfodir	=	/usr/local/var/bak/charinfo
+-#pidfile	=	/usr/local/var/d2dbs.pid
++logfile		=	!!VAR!!d2dbs.log
++logfile-gs	=	!!VAR!!d2dbs-gs.log
++charsavedir	=	!!VAR!!charsave
++charinfodir	=	!!VAR!!charinfo
++ladderdir	=	!!VAR!!ladders
++bak_charsavedir	=	!!VAR!!bak/charsave
++bak_charinfodir	=	!!VAR!!bak/charinfo
++pidfile	=	!!VAR!!d2dbs.pid
+ 
+ #										#
+ #################################################################################

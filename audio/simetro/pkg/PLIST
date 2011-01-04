@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+bin/simetro
+share/doc/simetro/
+share/doc/simetro/README
+share/examples/simetro/
+share/examples/simetro/3-slow
+share/examples/simetro/4-100bpm
+share/examples/simetro/4-fast
+share/examples/simetro/groove
+share/examples/simetro/military
+share/examples/simetro/noaccent-100bpm
+share/examples/simetro/swing
+share/examples/simetro/swing2
+share/examples/simetro/tabla

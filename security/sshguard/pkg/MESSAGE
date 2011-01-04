@@ -1,0 +1,11 @@
+Please add the following to /etc/pf.conf:
+
+table <sshguard> persist
+
+block in quick on $ext_if proto tcp from <sshguard> to any port 22 label "ssh bruteforce"
+
+Please add this to syslogd.conf:
+
+auth.info;authpriv.info		|/usr/local/sbin/sshguard
+
+

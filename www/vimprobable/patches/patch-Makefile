@@ -1,0 +1,25 @@
+$OpenBSD$
+--- Makefile.orig	Fri Dec 25 13:38:59 2009
++++ Makefile	Tue Jan 12 17:18:21 2010
+@@ -2,10 +2,10 @@ GCC    = gcc
+ LIBS   = gtk+-2.0
+ LIBS  += webkit-1.0
+ LIBS  += libsoup-2.4
+-FLAGS  = `pkg-config --cflags --libs $(LIBS)` -Wall -Wstrict-prototypes -ansi
++FLAGS  = `pkg-config --cflags --libs $(LIBS)` -Wall -Wstrict-prototypes -ansi -pthread
+ SOURCE = main.c
+ TARGET = vimprobable2
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ 
+ all: $(TARGET)
+ 
+@@ -18,7 +18,7 @@ $(TARGET): main.c config.h hintingmode.h
+ clean:
+ 	rm -f $(TARGET)
+ 
+-install: all uninstall
++install: all 
+ 	cp $(TARGET) $(PREFIX)/bin && chmod 755 $(PREFIX)/bin/$(TARGET)
+ 	cp vimprobable2.1 $(PREFIX)/man/man1 && chmod 644 $(PREFIX)/man/man1/vimprobable2.1
+ 	cp vimprobablerc.1 $(PREFIX)/man/man1 && chmod 644 $(PREFIX)/man/man1/vimprobablerc.1

@@ -1,0 +1,9 @@
+$OpenBSD$
+--- examples/4-100bpm.orig	Sat Aug  1 01:37:12 2009
++++ examples/4-100bpm	Sat Aug  1 01:32:26 2009
+@@ -1,3 +1,3 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-../simetro 140 9252  | ecasound -f:s16,2,44100,i -i:stdin
++simetro 140 9252  | aucat -i-

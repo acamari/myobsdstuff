@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/vimprobable2
+@man man/man1/vimprobable2.1
+@man man/man1/vimprobablerc.1

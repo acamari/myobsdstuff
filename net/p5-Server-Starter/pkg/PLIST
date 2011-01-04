@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+bin/start_server
+${P5SITE}/Server/
+${P5SITE}/Server/Starter.pm
+@man man/man1/start_server.1
+@man man/man3p/Server::Starter.3p

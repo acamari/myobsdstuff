@@ -1,0 +1,139 @@
+$OpenBSD$
+--- src/fwalls/command.c.orig	Thu Oct  2 02:42:38 2008
++++ src/fwalls/command.c	Sun Nov 16 19:54:26 2008
+@@ -6,75 +6,90 @@
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
++#include <sys/socket.h>
++#include <sys/ioctl.h>
++#include <sys/fcntl.h>
++#include <net/if.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
++#include <net/pfvar.h>
++#include <err.h>
+ 
+-
+ #include "../sshguard_log.h"
+ #include "../sshguard_fw.h"
+-#include "command.h"
+ 
+-#define COMMAND_ENVNAME_ADDR        "SSHG_ADDR"
+-#define COMMAND_ENVNAME_ADDRKIND    "SSHG_ADDRKIND"
+-#define COMMAND_ENVNAME_SERVICE     "SSHG_SERVICE"
++enum { COMMAND_FLUSH =1, COMMAND_BLOCK, COMMAND_RELEASE};
+ 
+-static int run_command(char *command, char *addr, int addrkind, int service);
++static int pfctl_ioctl(int command, char *addr);
+ 
+-
+ int fw_init() {
+-    return (run_command(COMMAND_INIT, NULL, 0, 0) == 0 ? FWALL_OK : FWALL_ERR);
++    return FWALL_OK;
+ }
+ 
+ int fw_fin() {
+-    return (run_command(COMMAND_FIN, NULL, 0, 0) == 0 ? FWALL_OK : FWALL_ERR);
++    return FWALL_OK;
+ }
+ 
+ int fw_block(char *addr, int addrkind, int service) {
+-    return (run_command(COMMAND_BLOCK, addr, addrkind, service) == 0 ? FWALL_OK : FWALL_ERR);
++    return (pfctl_ioctl(COMMAND_BLOCK, addr) == 0 ? FWALL_OK : FWALL_ERR);
+ }
+ 
+ int fw_release(char *addr, int addrkind, int service) {
+-    return (run_command(COMMAND_RELEASE, addr, addrkind, service) == 0 ? FWALL_OK : FWALL_ERR);
++    return (pfctl_ioctl(COMMAND_RELEASE, addr) == 0 ? FWALL_OK : FWALL_ERR);
+ }
+ 
+ int fw_flush(void) {
+-    return (run_command(COMMAND_FLUSH, NULL, 0, 0) == 0 ? FWALL_OK : FWALL_ERR);
++    return (pfctl_ioctl(COMMAND_FLUSH, NULL) == 0 ? FWALL_OK : FWALL_ERR);
+ }
+ 
+     
+-static int run_command(char *command, char *addr, int addrkind, int service) {
+-    int ret;
+-    char *addrks, *servs;
++static int pfctl_ioctl(int command, char *ipaddress) {
++	int ret, dev, op, retval;
++	struct pfioc_table io;
++	struct pfr_table io2;
++	struct pfr_addr addr;
++	struct in_addr ipaddr;
+ 
+-    /* sanity check */
+-    if (command == NULL || strlen(command) == 0) return 0;
++	dev = open("/dev/pf", O_RDWR);
+ 
+-    if (addr != NULL) {
+-        /* export information to the environment */
+-        addrks = malloc(5);
+-        servs = malloc(5);
++	if(dev == -1) {
++		sshguard_log(LOG_ERR, "open /dev/pf failed\n");
++	}
+ 
+-        snprintf(addrks, 5, "%d", addrkind);
+-        snprintf(servs, 5, "%d", service);
++	memset(&io, 0, sizeof(struct pfioc_table));
++	memset(&io2, 0, sizeof(struct pfr_table));
++	memset(&addr, 0, sizeof(struct pfr_addr));
++	strlcpy(io2.pfrt_name, "sshguard", sizeof(io2.pfrt_name));
+ 
+-        setenv(COMMAND_ENVNAME_ADDR, addr, 1);
+-        setenv(COMMAND_ENVNAME_ADDRKIND, addrks, 1);
+-        setenv(COMMAND_ENVNAME_SERVICE, servs, 1);
+-
+-        sshguard_log(LOG_DEBUG, "Setting environment: " COMMAND_ENVNAME_ADDR "=%s;" COMMAND_ENVNAME_ADDRKIND "=%s;" COMMAND_ENVNAME_SERVICE "=%s.", addr, addrks, servs);
+-
+-        ret = system(command);
+-
+-        /* cleanup the environment */
+-        unsetenv(COMMAND_ENVNAME_ADDR);
+-        unsetenv(COMMAND_ENVNAME_ADDRKIND);
+-        unsetenv(COMMAND_ENVNAME_SERVICE);
+-    } else {
+-        ret = system(command);
+-    }
+-    
+-    ret = WEXITSTATUS(ret);
+-
+-    sshguard_log(LOG_DEBUG, "Run command \"%s\": exited %d.", command, ret);
+-
+-    return ret;
++	switch(command) {
++		case COMMAND_FLUSH:
++			op = DIOCRCLRADDRS;
++		break;
++		case COMMAND_BLOCK:
++		/* FALLTHROUGH */
++		case COMMAND_RELEASE:
++			op = DIOCRDELADDRS;
++			ret = inet_aton(ipaddress,  &ipaddr);
++			if (ret != 1) {
++				sshguard_log(LOG_ERR, "inet_aton() failed");
++			}
++		
++			memcpy(&(addr.pfra_ip4addr), &ipaddr, sizeof(ipaddr));
++			addr.pfra_af = AF_INET;
++			addr.pfra_net = 32;
++			io.pfrio_flags = 0;
++			io.pfrio_buffer = &addr;
++			io.pfrio_esize = sizeof(addr);
++			io.pfrio_size = 1;
++			break;
++	}
++	if(command == COMMAND_BLOCK)
++		op = DIOCRADDADDRS;
++	io.pfrio_table = io2;
++	retval = ioctl(dev, op, &io); 
++	if (retval) {
++		sshguard_log(LOG_ERR, "pfctl failed");
++	}
++	ret = 0;
++	return ret;
+ }
+-

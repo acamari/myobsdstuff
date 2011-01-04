@@ -1,0 +1,30 @@
+$OpenBSD$
+--- conf/d2cs.conf.in.orig	Mon Apr 13 04:30:21 2009
++++ conf/d2cs.conf.in	Mon Apr 13 04:32:35 2009
+@@ -102,16 +102,16 @@ loglevels = fatal,error,warn,info,debug,trace
+ # Use absolute paths in these lines to avoid problems!				#
+ #-------------------------------------------------------------------------------#
+ #										#
+-logfile			=	/usr/local/var/d2cs.log
+-charsavedir		=	/usr/local/var/charsave
+-charinfodir		=	/usr/local/var/charinfo
+-bak_charsavedir		=	/usr/local/var/bak/charsave
+-bak_charinfodir		=	/usr/local/var/bak/charinfo
+-ladderdir		=	/usr/local/var/ladders
+-newbiefile		=	/usr/local/var/files/newbie.save
+-transfile		=	/usr/local/etc/address_translation.conf
+-d2gsconffile		=	/usr/local/etc/d2server.ini
+-#pidfile		=	/usr/local/var/d2cs.pid
++logfile			=	!!VAR!!gd2cs.log
++charsavedir		=	!!VAR!!gcharsave
++charinfodir		=	!!VAR!!gcharinfo
++bak_charsavedir		=	!!VAR!!gbak/charsave
++bak_charinfodir		=	!!VAR!!gbak/charinfo
++ladderdir		=	!!VAR!!gladders
++newbiefile		=	!!VAR!!gfiles/newbie.save
++transfile		=	!!ETC!!address_translation.conf
++d2gsconffile		=	!!ETC!!d2server.ini
++pidfile		=	!!VAR!!d2cs.pid
+ 
+ #										#
+ #################################################################################
