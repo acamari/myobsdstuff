@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/PSGI/
-${P5SITE}/PSGI.pm
-${P5SITE}/PSGI.pod
-${P5SITE}/PSGI/FAQ.pod
-@man man/man3p/PSGI.3p
-@man man/man3p/PSGI::FAQ.3p
