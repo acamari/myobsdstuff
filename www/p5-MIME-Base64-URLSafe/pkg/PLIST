@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/MIME/
+${P5SITE}/MIME/Base64/
+${P5SITE}/MIME/Base64/URLSafe.pm
+@man man/man3p/MIME::Base64::URLSafe.3p
