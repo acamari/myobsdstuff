@@ -1,0 +1,13 @@
+$OpenBSD$
+--- sslh-fork.c.orig	Sun Jan 16 23:02:45 2011
++++ sslh-fork.c	Sun Jan 16 23:01:41 2011
+@@ -24,7 +24,9 @@
+ 
+ const char* server_type = "sslh-fork";
+ 
++#ifndef MAX
+ #define MAX(a, b)  (((a) > (b)) ? (a) : (b))
++#endif
+ 
+ /* shovels data from one fd to the other and vice-versa 
+    returns after one socket closed

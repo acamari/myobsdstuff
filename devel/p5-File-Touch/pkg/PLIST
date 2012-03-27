@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/File/
+${P5SITE}/File/Touch.pm
+@man man/man3p/File::Touch.3p

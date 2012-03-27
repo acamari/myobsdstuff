@@ -1,0 +1,7 @@
+Catalyst-Controller-HTML-FormFu-0.08002 
+	introduced incompatible changes, drops deprecated methods. So we update
+	to 0.06001 instead of 0.9000
+
+Test-WWW-Mechanize-Catalyst-0.53
+	www/p5-Catalyst-Plugin-Session-State-Cookie supresses a warning about
+	missing it.

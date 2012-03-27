@@ -1,0 +1,3 @@
+sslh lets one accept both HTTPS and SSH connections on the same port. It
+makes it possible to connect to an SSH server on port 443 (e.g. from
+inside a corporate firewall) while still serving HTTPS on that port.
