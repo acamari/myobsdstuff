@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-${P5ARCH}/auto/BSD/arc4random/arc4random.so
