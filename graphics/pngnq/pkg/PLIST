@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/pngcomp
+@bin bin/pngnq
+@man man/man1/pngnq.1
