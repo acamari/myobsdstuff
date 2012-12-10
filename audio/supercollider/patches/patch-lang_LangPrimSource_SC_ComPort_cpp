@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lang/LangPrimSource/SC_ComPort.cpp.orig	Sat Dec  8 22:08:24 2012
++++ lang/LangPrimSource/SC_ComPort.cpp	Sat Dec  8 22:08:42 2012
+@@ -37,7 +37,7 @@
+ # include <errno.h>
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ # include <errno.h>
+ #endif
+ 

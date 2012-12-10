@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lang/LangPrimSource/PyrPrimitive.cpp.orig	Sat Dec  8 22:53:01 2012
++++ lang/LangPrimSource/PyrPrimitive.cpp	Sat Dec  8 22:52:09 2012
+@@ -4177,7 +4177,7 @@ void initMIDIPrimitives();
+ 	initMIDIPrimitives();
+ #endif
+ 
+-#if !defined(SC_WIN32) && !defined(SC_IPHONE)
++#if !defined(SC_WIN32) && !defined(SC_IPHONE) && !defined(__OpenBSD__)
+ void initHIDPrimitives();
+ 	initHIDPrimitives();
+ 

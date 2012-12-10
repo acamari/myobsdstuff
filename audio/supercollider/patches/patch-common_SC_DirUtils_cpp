@@ -1,0 +1,12 @@
+$OpenBSD$
+--- common/SC_DirUtils.cpp.orig	Sat Dec  8 21:57:49 2012
++++ common/SC_DirUtils.cpp	Sat Dec  8 21:57:52 2012
+@@ -149,7 +149,7 @@ bool sc_IsNonHostPlatformDir(const char *name)
+ 	const char a[] = "linux", b[] = "windows", c[]="iphone";
+ #elif defined(__linux__)
+ 	const char a[] = "osx", b[] = "windows", c[]="iphone";
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	const char a[] = "osx", b[] = "windows", c[]="iphone";
+ #elif defined(_WIN32)
+ 	const char a[] = "osx", b[] = "linux", c[]="iphone";

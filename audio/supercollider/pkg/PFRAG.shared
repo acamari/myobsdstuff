@@ -1,0 +1,26 @@
+@comment $OpenBSD$
+lib/SuperCollider/plugins/BinaryOpUGens.so
+lib/SuperCollider/plugins/ChaosUGens.so
+lib/SuperCollider/plugins/DelayUGens.so
+lib/SuperCollider/plugins/DemandUGens.so
+lib/SuperCollider/plugins/DiskIO_UGens.so
+lib/SuperCollider/plugins/DynNoiseUGens.so
+lib/SuperCollider/plugins/FFT_UGens.so
+lib/SuperCollider/plugins/FilterUGens.so
+lib/SuperCollider/plugins/GendynUGens.so
+lib/SuperCollider/plugins/GrainUGens.so
+lib/SuperCollider/plugins/IOUGens.so
+lib/SuperCollider/plugins/LFUGens.so
+lib/SuperCollider/plugins/ML_UGens.so
+lib/SuperCollider/plugins/MulAddUGens.so
+lib/SuperCollider/plugins/NoiseUGens.so
+lib/SuperCollider/plugins/OscUGens.so
+lib/SuperCollider/plugins/PV_ThirdParty.so
+lib/SuperCollider/plugins/PanUGens.so
+lib/SuperCollider/plugins/PhysicalModelingUGens.so
+lib/SuperCollider/plugins/ReverbUGens.so
+lib/SuperCollider/plugins/TestUGens.so
+lib/SuperCollider/plugins/TriggerUGens.so
+lib/SuperCollider/plugins/UIUGens.so
+lib/SuperCollider/plugins/UnaryOpUGens.so
+lib/SuperCollider/plugins/UnpackFFTUGens.so

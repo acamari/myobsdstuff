@@ -1,0 +1,15 @@
+$OpenBSD$
+--- include/common/SC_Endian.h.orig	Wed May 11 04:52:03 2011
++++ include/common/SC_Endian.h	Sat Dec  8 21:53:06 2012
+@@ -35,9 +35,9 @@
+ 
+ # include <machine/endian.h>
+ 
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+-# include <machine/endian.h>
++# include <sys/types.h>
+ # include <netinet/in.h>
+ 
+ #elif defined(_WIN32)

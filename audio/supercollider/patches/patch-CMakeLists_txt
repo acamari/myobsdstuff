@@ -1,0 +1,15 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Dec  8 22:42:05 2012
++++ CMakeLists.txt	Sat Dec  8 22:41:40 2012
+@@ -181,6 +181,11 @@ if (SC_QT)
+   message( STATUS "Compiling with Qt GUI" )
+ endif (SC_QT)
+ 
++option(SC_LID "Build SuperCollider with Linux Input Device support" ON)
++if (SC_LID)
++  message( STATUS "Compiling with Linux Input Device support" )
++endif (SC_LID)
++
+ if(WIN32)
+     option(SC_WIN_DEP_DIRS
+         "A list of directories where dependencies will be searched for when packaging.")

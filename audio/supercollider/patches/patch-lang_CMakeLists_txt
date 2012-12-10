@@ -1,0 +1,16 @@
+$OpenBSD$
+--- lang/CMakeLists.txt.orig	Sat Dec  8 22:42:45 2012
++++ lang/CMakeLists.txt	Sat Dec  8 22:43:10 2012
+@@ -139,8 +139,10 @@ if(UNIX)
+ 		if(ALSA_FOUND)
+ 			list(APPEND sclang_sources LangPrimSource/SC_AlsaMIDI.cpp)
+ 		endif()
+-		list(APPEND sclang_sources LangPrimSource/SC_LID.cpp)
+-		add_definitions(-DHAVE_LID)
++		if(SC_LID)
++			list(APPEND sclang_sources LangPrimSource/SC_LID.cpp)
++			add_definitions(-DHAVE_LID)
++		endif(SC_LID)
+ 	endif(APPLE)
+ else(UNIX)
+ endif(UNIX)
