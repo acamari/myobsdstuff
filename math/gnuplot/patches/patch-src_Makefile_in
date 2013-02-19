@@ -1,19 +1,16 @@
 $OpenBSD: patch-src_Makefile_in,v 1.1 2011/01/06 23:45:07 jasper Exp $
---- src/Makefile.in.orig	Thu Jan  6 21:38:39 2011
-+++ src/Makefile.in	Thu Jan  6 21:40:48 2011
-@@ -205,9 +205,9 @@ GDLIB_CONFIG = @GDLIB_CONFIG@
- GIHDIR = @GIHDIR@
- GREP = @GREP@
+--- src/Makefile.in.orig	Wed Sep 26 18:06:29 2012
++++ src/Makefile.in	Tue Feb 19 03:01:29 2013
+@@ -304,7 +304,7 @@ GREP = @GREP@
  GTK28_CFLAGS = @GTK28_CFLAGS@
--GTK28_LIBS = @GTK28_LIBS@
-+GTK28_LIBS = @GTK28_LIBS@ 
+ GTK28_LIBS = @GTK28_LIBS@
  GTK_CFLAGS = @GTK_CFLAGS@
 -GTK_LIBS = @GTK_LIBS@
 +GTK_LIBS = @GTK_LIBS@ -ltermcap
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -219,7 +219,7 @@ LATEX = @LATEX@
+@@ -316,7 +316,7 @@ LATEX = @LATEX@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
  LIBRARIES_FOR_X = @LIBRARIES_FOR_X@
