@@ -85,6 +85,7 @@ LIB_DEPENDS =		audio/jack \
 			devel/yaml-cpp \
 			math/fftw3,-main,float>=3.0 \
 			net/avahi,-main \
+			net/curl \
 			textproc/icu4c
 
 #REGRESS_DEPENDS =	???
@@ -116,7 +117,7 @@ SEPARATE_BUILD =	Yes
 # 	  simple: port has its own configure script
 #CONFIGURE_STYLE =	
 #CONFIGURE_SCRIPT =	??? (if other than configure)
-CONFIGURE_ARGS +=	-DSC_QT=OFF -DSC_IDE=OFF -DSC_LID=OFF -DSYSTEM_BOOST=ON
+CONFIGURE_ARGS +=	-DSC_QT=OFF -DSC_IDE=OFF -DSYSTEM_BOOST=ON
 #CONFIGURE_ENV =	???
 
 # for gnu stuff
