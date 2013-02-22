@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/DNS/
+${P5SITE}/Net/DNS/ZoneParse/
+${P5SITE}/Net/DNS/ZoneParse.pm
+${P5SITE}/Net/DNS/ZoneParse/Generator/
+${P5SITE}/Net/DNS/ZoneParse/Generator/DNSZoneParse.pm
+${P5SITE}/Net/DNS/ZoneParse/Generator/Native.pm
+${P5SITE}/Net/DNS/ZoneParse/Parser/
+${P5SITE}/Net/DNS/ZoneParse/Parser/DNSZoneParse.pm
+${P5SITE}/Net/DNS/ZoneParse/Parser/Native/
+${P5SITE}/Net/DNS/ZoneParse/Parser/Native.pm
+${P5SITE}/Net/DNS/ZoneParse/Parser/Native/DNSext.pm
+${P5SITE}/Net/DNS/ZoneParse/Parser/NetDNSZoneFileFast.pm
+${P5SITE}/Net/DNS/ZoneParse/Parser/NetDNSZoneParser.pm
+${P5SITE}/Net/DNS/ZoneParse/Zone.pm
+@man man/man3p/Net::DNS::ZoneParse.3p
+@man man/man3p/Net::DNS::ZoneParse::Generator::DNSZoneParse.3p
+@man man/man3p/Net::DNS::ZoneParse::Generator::Native.3p
+@man man/man3p/Net::DNS::ZoneParse::Parser::DNSZoneParse.3p
+@man man/man3p/Net::DNS::ZoneParse::Parser::Native.3p
+@man man/man3p/Net::DNS::ZoneParse::Parser::Native::DNSext.3p
+@man man/man3p/Net::DNS::ZoneParse::Parser::NetDNSZoneFileFast.3p
+@man man/man3p/Net::DNS::ZoneParse::Parser::NetDNSZoneParser.3p
+@man man/man3p/Net::DNS::ZoneParse::Zone.3p

@@ -1,0 +1,9 @@
+This module is yet another caching parser/generator for RFC1035
+compatible zone-files. It aims to have a fast interface for parsing and
+support all RRs known to Net::DNS::RR.
+
+In some circumstances the parsing of an entry is too complicated for the
+default _from_string-logic of the corresponding RR. For this cases,
+N::D::ZoneParse extends the Interface of N::D::RR with the function
+new_from_filestring. Per default this will call the responding
+new_from_string, but may be implemented differently for a given RR.
