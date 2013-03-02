@@ -1,3 +1,0 @@
-Plack::Middleware::ReverseProxy resets some HTTP headers, which changed
-by reverse-proxy. You can specify the reverse proxy address and stop
-fake requests using 'enable_if' directive in your app.psgi.
