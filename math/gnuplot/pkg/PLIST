@@ -4,7 +4,6 @@ bin/lasergnu
 @man man/man1/gnuplot.1
 @man man/man1/lasergnu.1
 share/gnuplot/
-!%%no_x11%%
 share/gnuplot/${V}/
 share/gnuplot/${V}/PostScript/
 share/gnuplot/${V}/PostScript/8859-1.ps
@@ -43,3 +42,4 @@ share/gnuplot/${V}/js/previouszoom.png
 share/gnuplot/${V}/js/textzoom.png
 share/gnuplot/${V}/lua/
 share/gnuplot/${V}/lua/gnuplot-tikz.lua
+!%%no_x11%%
