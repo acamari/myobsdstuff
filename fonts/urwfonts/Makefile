@@ -10,7 +10,6 @@ HOMEPAGE=		http://www.artifex.com/downloads/
 # Aladdin Free Public License, no commercial
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES= ${MASTER_SITE_TEX_CTAN:=support/ghostscript/AFPL/GhostPCL/}
@@ -18,7 +17,7 @@ MASTER_SITES= ${MASTER_SITE_TEX_CTAN:=support/ghostscript/AFPL/GhostPCL/}
 EXTRACT_SUFX=		.tar.bz2
 NO_BUILD=		Yes
 PKG_ARCH=		*
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 FONTSDIR=		${PREFIX}/lib/X11/fonts/urwfonts
 
 do-install:
